@@ -86,6 +86,10 @@ app.get('/api/user/logout', auth, (req,res) =>{
     })
 })
 
+app.get('/', (req, res) =>{
+    res.json({ "hello": "i am happy that it works !" })
+})
+
 
 const port = process.env.PORT || 5000
 
