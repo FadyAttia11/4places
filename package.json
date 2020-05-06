@@ -13,7 +13,7 @@
     "install-all": "concurrently \"npm run client-install\" \"npm run server-install\"",
     "all": "concurrently \"npm run client\" \"npm run server\""
   },
-  "author": "",
+  "author": "FadyAttia",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^4.0.1",
