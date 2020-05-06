@@ -7,7 +7,6 @@ const config = require('./config/key')
 const { auth } = require('./middleware/auth')
 
 const app = express()
-const port = process.env.PORT || 5000
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -87,4 +86,9 @@ app.get('/api/user/logout', auth, (req,res) =>{
     })
 })
 
-app.listen(port)
+
+const port = process.env.PORT || 5000
+
+app.listen(port, () => {
+    console.log(`server running at ${port}`)
+})

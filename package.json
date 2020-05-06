@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "App.js",
+  "engine": {
+    "node": "13.3.0",
+    "npm": "6.13.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node App",
+    "start": "node server/App",
     "client": "cd client && npm run start",
-    "server": "nodemon App --ignore client/",
+    "server": "nodemon server/App --ignore client/",
     "client-install": "cd client && npm install",
     "server-install": "npm install",
     "install-all": "concurrently \"npm run client-install\" \"npm run server-install\"",
