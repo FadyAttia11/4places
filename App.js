@@ -1,9 +1,18 @@
 const express = require('express')
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const { User } = require('./models/user')
+const config = require('./config/key')
+
 const app = express()
 const port = process.env.PORT || 5000
 
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/test',
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+app.use(cookieParser())
+
+mongoose.connect(config.mongoURI,
 {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -11,18 +20,19 @@ mongoose.connect('mongodb://localhost/test',
 }).then(() => console.log('DB connected'))
 .catch(err => console.log(err))
 
-/*
-const bodyParser = require('body-parser')
-app.use(bodyParser.json())
-*/
+app.post('/api/users/register', (req, res) => {
+    const user = new User(req.body)
 
+    user.save((err, userData) => {
+        if(err) return res.json({ success: false, err })
+        return res.status(200).json({ success: true })
+    })
+})
+
+/*
 app.get('/', (req, res) =>{
     res.send('hello world')
 })
-
-/*routes
-const employee = require('./routes/employee')
-app.use('./employee', employee)
 */
 
 app.listen(port)
