@@ -2,7 +2,7 @@
   "name": "mernboilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "App.js",
+  "main": "server/App.js",
   "engine": {
     "node": "13.3.0",
     "npm": "6.13.1"
