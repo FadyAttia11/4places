@@ -48,6 +48,7 @@ userSchema.pre('save', function( next ){
                 if(err) return next(err)
 
                 user.password = hash
+                next()
             })
         })
 
@@ -57,8 +58,8 @@ userSchema.pre('save', function( next ){
 })
 
 //to compare password and return true if they match
-userSchema.methods.comparePassword = function(plainPassword, cb){
-    bcrypt.compare(plainPassword, this.password, function(err, isMatch){
+userSchema.methods.comparePassword = function(plainPassword, cb) {
+    bcrypt.compare(plainPassword, this.password, function(err, isMatch) {
         if(err) return cb(err)
         cb(null, isMatch)
     })
@@ -76,6 +77,18 @@ userSchema.methods.generateToken = function(cb){
     user.save(function (err, user){
         if (err) return cb(err)
         cb(null, user)
+    })
+}
+
+userSchema.statics.findByToken = function(token, cb) {
+    var user = this
+
+    // decode is the user._id for specific user related to secret word
+    jwt.verify(token, 'secret', function(err, decode){
+        user.findOne({"_id": decode, "token": token}, function(err, user){
+            if(err) return cb(err)
+            cb(null, user)
+        })
     })
 }
 
