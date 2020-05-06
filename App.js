@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cookieParser())
 
+
+//connecting to mongodb function
 mongoose.connect(config.mongoURI,
 {
     useNewUrlParser: true,
@@ -20,6 +22,8 @@ mongoose.connect(config.mongoURI,
 }).then(() => console.log('DB connected'))
 .catch(err => console.log(err))
 
+
+//signup function
 app.post('/api/users/register', (req, res) => {
     const user = new User(req.body)
 
@@ -29,10 +33,34 @@ app.post('/api/users/register', (req, res) => {
     })
 })
 
-/*
-app.get('/', (req, res) =>{
-    res.send('hello world')
+//login function
+app.post('/api/users/login', (req, res) => {
+    //find the email
+    User.findOne({ email: req.body.email }, (err, user) => {
+        if(!user) 
+        return res.json ({
+            loginSuccess: false,
+            message: "Auth failed, email not found"
+        })
+
+        //compare password --here we will make comparePassword function in the user model
+        user.comparePassword(req.body.passsword, (err, isMatch) => {
+            if(!isMatch){
+                return res.json ({ loginSuccess: false, message: "wrong password"})
+            }
+        })
+
+        //generate Token
+        user.generateToken((err, user) => {
+            if (err) return res.status(400).send(err)
+            res.cookie("x_auth", user.token)
+                .status(200)
+                .json({
+                    loginSuccess: true
+                })
+        })
+    })
 })
-*/
+
 
 app.listen(port)
