@@ -15,7 +15,7 @@
     "client-install": "cd client && npm install",
     "server-install": "npm install",
     "install-all": "concurrently \"npm run client-install\" \"npm run server-install\"",
-    "all": "concurrently \"npm run client\" \"npm run server\""
+    "all": "concurrently \"npm run server\" \"npm run start  --prefix client\""
   },
   "author": "FadyAttia",
   "license": "ISC",
@@ -28,6 +28,8 @@
     "mongoose": "^5.9.12"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
+    "http-proxy-middleware": "^1.0.3",
     "nodemon": "^2.0.3"
   }
 }
