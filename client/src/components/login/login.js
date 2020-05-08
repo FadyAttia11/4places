@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default class login extends Component {
 
@@ -34,9 +35,9 @@ export default class login extends Component {
 
         if(this.isFormValid(this.state)){
             this.setState({errors: [] })
-            console.log(dataToSubmit)
+            console.log(dataToSubmit) //just for debugging
             const response = await this.loginUser(dataToSubmit)
-            console.log(response)
+            console.log(response) //just for debugging
             if(response.loginSuccess){
                 this.props.history.push('/')
             }else {
@@ -64,6 +65,7 @@ export default class login extends Component {
     render() {
         return (
             <div>
+                <h2>Login Page</h2>
                 <form onSubmit={e => this.handleSubmit(e)}>
                     <label htmlFor="email">E-mail: </label><br/>
                     <input 
@@ -96,6 +98,15 @@ export default class login extends Component {
                     >
                         Login
                     </button>
+
+                    <Link to="/signup">
+                        <button
+                            name="action"
+                            type="submit"
+                        >
+                            Go to Signup Page
+                        </button>
+                    </Link>
                 </form>
             </div>
         )
