@@ -24,7 +24,7 @@ mongoose.connect(config.mongoURI,
 
 
 //signup function
-app.post('/api/user/signup', (req, res) => {
+app.post('/api/users/signup', (req, res) => {
     const user = new User(req.body)
 
     user.save((err, userData) => {
@@ -34,7 +34,7 @@ app.post('/api/user/signup', (req, res) => {
 })
 
 //login function
-app.post('/api/user/login', (req, res) => {
+app.post('/api/users/login', (req, res) => {
     //find the email
     User.findOne({ email: req.body.email }, (err, user) => {
         if(!user) 
@@ -63,7 +63,7 @@ app.post('/api/user/login', (req, res) => {
 })
 
 //Authentication Middleware function
-app.get('/api/user/auth', auth, (req, res) => {
+app.get('/api/users/auth', auth, (req, res) => {
     res.status(200).json({
         _id: req._id,
         isAuth: true,
@@ -75,7 +75,7 @@ app.get('/api/user/auth', auth, (req, res) => {
 })
 
 //Logout function
-app.get('/api/user/logout', auth, (req,res) =>{
+app.get('/api/users/logout', auth, (req,res) =>{
     //for the id in model equals to our id ==> make the token empty so we log out
     // note: we must use auth midware to be able to use req.user which is assigned in it
     User.findByIdAndUpdate({_id: req.user._id}, {token: ""}, (err, doc) =>{
