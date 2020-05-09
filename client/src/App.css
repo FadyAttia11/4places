@@ -1,0 +1,37 @@
+@font-face {
+    src: url(assets/fonts/MarkaziText-VariableFont_wght.ttf);
+    font-family: customArabic;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+@font-face {
+    src: url(assets/fonts/Cairo-Regular.ttf);
+    font-family: Cairo-Regular;
+}
+
+@font-face {
+    src: url(assets/fonts/Cairo-SemiBold.ttf);
+    font-family: Cairo-semibold;
+}
+
+@font-face {
+    src: url(assets/fonts/Cairo-Bold.ttf);
+    font-family: Cairo-bold;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.container {
+    /*position: fixed;*/
+    background-color: #fcefee;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background:#ffffff url('./assets/img/mountain3.jpg') no-repeat fixed;  
+    background-size: cover;
+}

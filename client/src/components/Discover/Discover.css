@@ -1,0 +1,16 @@
+Discover-main {
+    display: flex;
+    flex-direction: row;
+}
+
+Discover-sentence {
+    flex: 1;
+    order: 2;
+    display: flex;
+    align-items: center;
+}
+
+Discover-categories {
+    flex: 2;
+    order: 1;
+}

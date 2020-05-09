@@ -1,0 +1,137 @@
+.footer {
+    background: #813D36;
+    color: white;
+    height: 400px;
+    position: relative;
+    margin-top: 100px;
+}
+
+.footer .footer-content {
+    height: 350px;
+    display: flex;
+}
+
+.footer .footer-content .footer-section {
+    flex: 1;
+    padding: 25px;
+    /*border: 1px solid #F1E2DD;*/
+}
+
+.footer .footer-content .footer-section p,
+.footer .footer-content .footer-section h2,
+.footer .footer-content .footer-section li {
+    text-align: left;
+    font-family: customArabic;
+}
+
+.footer .footer-content .footer-section h2 {
+    font-size: 1.6rem;
+}
+
+.footer .footer-content .about .contact span {
+    display: block;
+    font-size: 1.1em;
+    font-family: Cairo-semibold;
+}
+
+.footer .footer-content .links ul {
+    margin-top: -8px;
+    list-style: none;
+}
+
+.footer .footer-content .links li {
+    padding: 3.5px;
+}
+
+.footer .footer-content .links ul a {
+    text-decoration: none;
+    color:rgb(168, 168, 168);
+    display: block;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.footer .footer-content .links ul a:hover,
+.footer .footer-content .links ul a:active {
+    color: #fa923f;
+    margin-left: 15px;
+    transition: all 0.3s;
+}
+
+.footer .footer-content form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.footer .footer-content form input {
+    text-align: left;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 1px;
+    font-size: large;
+    background-color: #ececec;
+    font-family: customArabic;
+}
+
+.footer .footer-content form textarea {
+    text-align: left;
+    width: 100%;
+    height: 100px;
+    font-size: large;
+    background-color: #ececec;
+    font-family: customArabic;
+}
+
+.footer .footer-content form input:focus,
+.footer .footer-content form textarea:focus {
+    background-color: #dbdbdb
+}
+
+.footer .footer-content form button {
+    background-color: rgb(197, 197, 197);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: customArabic;
+    text-decoration: none;
+    border-radius: 7px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    align-items: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.footer .footer-content form button:hover {
+    background-color: rgb(114, 114, 114); /* Green */
+    color: rgb(0, 0, 0);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.footer .footer-bottom {
+    background: #712D26;
+    color: grey;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-family: Cairo-bold;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 20px;
+}
+
+@media(max-width: 767px){
+    .footer{
+        height: 1100px;
+    }
+    .footer .footer-content {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 1050px;
+    }
+}
