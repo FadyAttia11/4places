@@ -29,7 +29,7 @@
 }
 
 .side-drawer a {
-    color: #813D36;
+    color: #707991;
     text-decoration: none;
     font-size: 1.2rem;
     font-family: customArabic;
@@ -37,10 +37,10 @@
 
 .side-drawer a:hover,
 .side-drawer a:active {
-    color: #fa923f;
+    color: #492540;
 }
 
-@media (min-width: 769px){
+@media (min-width: 785px){
     .side-drawer {
         display: none;
     }

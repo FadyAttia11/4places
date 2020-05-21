@@ -44,7 +44,7 @@ class App extends React.Component{
           <SideDrawer show={this.state.sideDrawerOpen}/>
           {backdrop}
 
-          <main style={{marginTop: '56px'}}>
+          <main className="main-container">
 
             <Route exact path='/' component={MainScreen} />
             <Route path='/about' component={About} />

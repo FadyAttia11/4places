@@ -1,5 +1,5 @@
 .footer {
-    background: #813D36;
+    background: #454b5e;
     color: white;
     height: 400px;
     position: relative;
@@ -53,7 +53,7 @@
 
 .footer .footer-content .links ul a:hover,
 .footer .footer-content .links ul a:active {
-    color: #fa923f;
+    color: rgb(122, 122, 122);
     margin-left: 15px;
     transition: all 0.3s;
 }
@@ -113,7 +113,7 @@
 }
 
 .footer .footer-bottom {
-    background: #712D26;
+    background: #2a2e3b;
     color: grey;
     height: 50px;
     width: 100%;
@@ -131,7 +131,7 @@
     }
     .footer .footer-content {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         height: 1050px;
     }
 }

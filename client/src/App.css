@@ -26,12 +26,16 @@ p {
 
 .container {
     /*position: fixed;*/
-    background-color: #fcefee;
     height: 100%;
     width: 100%;
     left: 0;
     top: 0;
     z-index: 10;
-    background:#ffffff url('./assets/img/mountain3.jpg') no-repeat fixed;  
+    background: url(./assets/img/mountain3.jpg) no-repeat fixed;
     background-size: cover;
+}
+
+.main-container {
+    margin-top: 56px;
+    min-height: 500px;
 }

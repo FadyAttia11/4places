@@ -25,6 +25,7 @@
     text-decoration: none;
     border-radius: 15px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
 }
 .button:hover {
     background-color: rgb(4, 4, 66); /* Green */
@@ -70,7 +71,7 @@
     flex-direction: column;
 }
 
-@media (max-width: 767px){
+@media (max-width: 785px){
     .flex-container{
         display: flex;
         flex-direction: column-reverse;

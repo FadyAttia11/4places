@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import './login.css'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
 export default class login extends Component {
 
@@ -64,26 +64,30 @@ export default class login extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Login Page</h2>
+            <div className="login-container">
+                <h1>Login</h1>
                 <form onSubmit={e => this.handleSubmit(e)}>
-                    <label htmlFor="email">E-mail: </label><br/>
-                    <input 
-                        name="email"
-                        id="email" 
-                        type="email" 
-                        value={this.state.email}
-                        onChange={e => this.handleEmailChange(e)}
-                    /><br/>
-                    
-                    <label htmlFor="password">Password: </label><br/>
-                    <input 
-                        name="password"
-                        id="password" 
-                        type="password" 
-                        value={this.state.password}
-                        onChange={e => this.handlePasswordChange(e)}
-                    /><br/>
+                    <div className="input-container">
+                        <input 
+                            name="email"
+                            id="email" 
+                            type="email" 
+                            placeholder="E-mail" 
+                            value={this.state.email}
+                            onChange={e => this.handleEmailChange(e)}
+                        /><br/>
+                    </div>
+
+                    <div className="input-container">
+                        <input 
+                            name="password"
+                            id="password" 
+                            type="password"
+                            placeholder="Password"  
+                            value={this.state.password}
+                            onChange={e => this.handlePasswordChange(e)}
+                        /><br/>
+                    </div>
 
                     {this.state.errors.length > 0 && (
                         <div>
@@ -96,17 +100,8 @@ export default class login extends Component {
                         type="submit"
                         onClick={e => this.submitForm(e)}
                     >
-                        Login
+                        Sign in
                     </button>
-
-                    <Link to="/signup">
-                        <button
-                            name="action"
-                            type="submit"
-                        >
-                            Go to Signup Page
-                        </button>
-                    </Link>
                 </form>
             </div>
         )

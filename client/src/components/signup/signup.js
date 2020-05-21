@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import './signup.css'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+
 
 
 export default class signup extends Component {
@@ -80,53 +81,63 @@ export default class signup extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Signup Page</h2>
+            <div className="signup-container">
+                <h1>Signup</h1>
                 <form onSubmit={e => this.handleSubmit(e)}>
-                    <label htmlFor="name">Name: </label><br/>
-                    <input
-                    name="name" 
-                    type="text"
-                    id="name"
-                    value={this.state.name}
-                    onChange={(e) => this.HandleNameChange(e)} 
-                    /><br/>
+                    <div className="input-container">
+                        <input
+                        name="name" 
+                        type="text"
+                        id="name"
+                        placeholder="Name"
+                        value={this.state.name}
+                        onChange={(e) => this.HandleNameChange(e)} 
+                        /><br/>
+                    </div>
 
-                    <label htmlFor="email">E-mail: </label><br/>
-                    <input
-                    name="email" 
-                    type="email"
-                    id="email"
-                    value={this.state.email}
-                    onChange={(e) => this.HandleEmailChange(e)} 
-                    /><br/>
+                    <div className="input-container">
+                        <input
+                        name="email" 
+                        type="email"
+                        id="email"
+                        placeholder="E-mail"
+                        value={this.state.email}
+                        onChange={(e) => this.HandleEmailChange(e)} 
+                        /><br/>
+                    </div>
 
-                    <label htmlFor="password">Enter Your Password:</label><br/>
-                    <input
-                    name="password" 
-                    type="password"
-                    id="password"
-                    value={this.state.password}
-                    onChange={(e) => this.HandlePasswordChange(e)} 
-                    /><br/>
+                    <div className="input-container">
+                        <input
+                        name="password" 
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        value={this.state.password}
+                        onChange={(e) => this.HandlePasswordChange(e)} 
+                        /><br/>
+                    </div>
 
-                    <label htmlFor="password">Re-Enter Your Password:</label><br/>
-                    <input
-                    name="repassword" 
-                    type="password"
-                    id="repassword"
-                    value={this.state.repassword}
-                    onChange={(e) => this.HandleRePasswordChange(e)} 
-                    /><br/>
+                    <div className="input-container">
+                        <input
+                        name="repassword" 
+                        type="password"
+                        id="repassword"
+                        placeholder="Re-Enter Password"
+                        value={this.state.repassword}
+                        onChange={(e) => this.HandleRePasswordChange(e)} 
+                        /><br/>
+                    </div>
 
-                    <label htmlFor="lastname">LastName:</label><br/>
-                    <input
-                    name="lastname" 
-                    type="text"
-                    id="lastname"
-                    value={this.state.lastname}
-                    onChange={(e) => this.HandleLastNameChange(e)} 
-                    /><br/>
+                    <div className="input-container">
+                        <input
+                        name="lastname" 
+                        type="text"
+                        id="lastname"
+                        placeholder="LastName"
+                        value={this.state.lastname}
+                        onChange={(e) => this.HandleLastNameChange(e)} 
+                        /><br/>
+                    </div>
 
                     {this.state.errors.length > 0 && (
                         <div>
@@ -141,15 +152,6 @@ export default class signup extends Component {
                     >
                         Signup
                     </button>
-
-                    <Link to="/login">
-                        <button
-                            name="action"
-                            type="submit"
-                        >
-                            Go to Login Page
-                        </button>
-                    </Link>
                 </form>
             </div>
         )

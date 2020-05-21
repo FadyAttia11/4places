@@ -5,7 +5,7 @@ const footer = props => (
     <div className="footer">
         <div className="footer-content">
             <div className="footer-section about">
-                <h2 className="logo-text">4movies</h2>
+                <h2 className="logo-text">4places</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, libero ad, maxime deleniti quod deserunt incidunt, repudiandae temporibus corporis omnis reprehenderit cupiditate illo. Esse culpa tempora doloremque, possimus voluptate aliquam!</p>
                 <div className="contact">
                     <span><i className="fas fa-phone"></i>&nbsp; 0122-956-5721</span>
@@ -26,7 +26,7 @@ const footer = props => (
                 <ul>
                     <a href="#"><li>Events</li></a>
                     <a href="#"><li>Developers Team</li></a>
-                    <a href="#"><li>All Movies</li></a>
+                    <a href="#"><li>All Members</li></a>
                     <a href="#"><li>Gallery</li></a>
                     <a href="#"><li>Terms and Conditions</li></a>
                 </ul>
@@ -47,7 +47,7 @@ const footer = props => (
         </div>
 
         <div className="footer-bottom">
-            &copy; 4Movies Website | Designed by Fady Attia
+            &copy; 4places Website | Designed by Fady Attia
         </div>
     </div>
 )
